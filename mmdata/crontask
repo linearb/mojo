@@ -1,0 +1,3 @@
+#!/bin/sh
+
+tail -300  /home/mojotronadmin/mmdata/incoming.log | /usr/bin/mail  -s 'daily net monitor log' mmdata@track.nachbar.com
