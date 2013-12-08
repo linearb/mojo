@@ -2,7 +2,7 @@
 
 """Sound an alarm if a raspberry pi hasn't been heard from lately
 
-To set an alarm for pi named pi, create a file in mmdata/pulse.d named pi.alarm
+To set an alarm for pi named 'pi', create a file in mmdata/pulse.d named pi.alarm
 
 """
 
