@@ -22,11 +22,10 @@ should_sendsms = True           # send an sms on alarm
 alarm_smsnumber = "+18572031608" 
 
 should_sendemail = False        # send an email on alarm
-alarm_emailaddress = "phawley@alum.mit.edu"
+alarm_emailaddress = "dan@nachbar.com"
 
 from twilio.rest import TwilioRestClient
 def sendsms(tonumber, message):
-#   print "sms to " + tonumber + ", message:" + message
     account_sid = "ACd0d1259ef85c56be62b193c176e753cb"
     auth_token = "0603adfe203aca45daeb959fcc404af8"
     client = TwilioRestClient(account_sid, auth_token)
@@ -34,19 +33,11 @@ def sendsms(tonumber, message):
     twilio_number = "+16173790273"
     reply = client.messages.create(to=tonumber, from_=twilio_number, body=message)
 
-
-import smtplib  
+import commands
 def sendemail(toaddress, message):
-    # not implemented: need smtp server
-    print "email to " + toaddress + ", message:" + message
-#   fromaddr = 'mojotronadmin@mm.mojotron.com'  
-#   username = 'username'  
-#   password = 'password'  
-#   server = smtplib.SMTP('smtp.gmail.com:587')  
-#   server.starttls()  
-#   server.login(username,password)  
-#   server.sendmail(fromaddr, toaddress, message)  
-#   server.quit()  
+    cmd = "echo '' | mail -s '{}' {}".format(message, toaddress)
+    (status, output) = commands.getstatusoutput(cmd)
+    # should catch error if status is not 0
 
 def alarm(pi_name):
     message = pi_name + " is down."

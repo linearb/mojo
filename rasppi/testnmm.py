@@ -2,8 +2,8 @@
 
 import nmm
 
-def my_print(a, b):
-	print a, b
+def my_print(*args):
+    print args
 
 nmm.datafile = '../mmdata/incoming.log'
 nmm.pulse = '../mmdata/pulse.d/'
