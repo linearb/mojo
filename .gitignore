@@ -2,6 +2,9 @@
 __pycache__/
 *.py[cod]
 
+# old stuff
+Attic/
+
 # C extensions
 *.so
 
