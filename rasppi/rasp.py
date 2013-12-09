@@ -19,18 +19,18 @@ snooze = True       # if True then delay before re-sounding alarm
 snoozedelay = 120*60    # in seconds
 
 should_sendsms = True           # send an sms on alarm
-alarm_smsnumber = "+18572031608" 
+alarm_smsnumber = "NEEDED" 
 
 should_sendemail = False        # send an email on alarm
 alarm_emailaddress = "dan@nachbar.com"
 
 from twilio.rest import TwilioRestClient
 def sendsms(tonumber, message):
-    account_sid = "ACd0d1259ef85c56be62b193c176e753cb"
-    auth_token = "0603adfe203aca45daeb959fcc404af8"
+    account_sid = "NEEDED"
+    auth_token = "NEEDED"
     client = TwilioRestClient(account_sid, auth_token)
      
-    twilio_number = "+16173790273"
+    twilio_number = "NEEDED"
     reply = client.messages.create(to=tonumber, from_=twilio_number, body=message)
 
 import commands
